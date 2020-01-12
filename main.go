@@ -2,10 +2,13 @@ package main
 
 import (
 	"os"
+	"os/signal"
 	"runtime"
+	"syscall"
 
 	"github.com/noptics/focal/config"
 	"github.com/noptics/focal/registrygrpc"
+	"github.com/noptics/focal/restapi"
 	"github.com/noptics/focal/streamergrpc"
 	"github.com/noptics/golog"
 	"google.golang.org/grpc"
@@ -24,7 +27,8 @@ func main() {
 
 	l.Infow("starting focal", "version", os.Getenv("VERSION"), "commit", os.Getenv("COMMIT"), "go", runtime.Version())
 
-	s := config.New()
+	c := config.New()
+	errChan := make(chan error)
 
 	// Connect to the registry
 	registryAddress := os.Getenv("REGISTRY_SERVICE")
@@ -44,7 +48,7 @@ func main() {
 	rc := registrygrpc.NewProtoRegistryClient(registryConn)
 
 	l.Info("successfully connected to the registry service")
-	s.Set(config.Registry, rc)
+	c.Set(config.Registry, rc)
 
 	// Connect to streamer
 	streamerAddress := os.Getenv("STREAMER_SERVICE")
@@ -61,5 +65,32 @@ func main() {
 
 	sc := streamergrpc.NewMessagesClient(streamerConn)
 	l.Info("successfully connected to the streaer service")
-	s.Set(config.Streamer, sc)
+	c.Set(config.Streamer, sc)
+
+	restPort := os.Getenv("REST_PORT")
+	if len(restPort) == 0 {
+		restPort = "7766"
+	}
+	c.Set(config.RESTPort, restPort)
+
+	rs := restapi.NewRestServer(errChan, l, c)
+
+	// go until told to stop
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGTERM, syscall.SIGINT)
+
+	select {
+	case <-sigs:
+	case <-errChan:
+		l.Infow("error", "error", err.Error())
+	}
+
+	l.Info("shutting down")
+
+	err = rs.Stop()
+	if err != nil {
+		l.Infow("error shutting down rest server", "error", err.Error())
+	}
+
+	l.Info("finished")
 }

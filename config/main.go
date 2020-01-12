@@ -13,6 +13,7 @@ const (
 	Registry  = "reg"
 	NatsProxy = "nprox"
 	Streamer  = "streamer"
+	RESTPort  = "rport"
 )
 
 // Store is a generic repository for application configuartion information

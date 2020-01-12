@@ -70,7 +70,7 @@ func (m *File) GetData() []byte {
 }
 
 type SaveFilesRequest struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,2,opt,name=channel,proto3" json:"channel,omitempty"`
 	Files                []*File  `protobuf:"bytes,3,rep,name=files,proto3" json:"files,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -103,9 +103,9 @@ func (m *SaveFilesRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_SaveFilesRequest proto.InternalMessageInfo
 
-func (m *SaveFilesRequest) GetCluster() string {
+func (m *SaveFilesRequest) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -156,7 +156,7 @@ func (m *SaveFilesReply) XXX_DiscardUnknown() {
 var xxx_messageInfo_SaveFilesReply proto.InternalMessageInfo
 
 type GetFilesRequest struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,2,opt,name=channel,proto3" json:"channel,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -188,9 +188,9 @@ func (m *GetFilesRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetFilesRequest proto.InternalMessageInfo
 
-func (m *GetFilesRequest) GetCluster() string {
+func (m *GetFilesRequest) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -242,7 +242,7 @@ func (m *GetFilesReply) GetFiles() []*File {
 }
 
 type SetMessageRequest struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,2,opt,name=channel,proto3" json:"channel,omitempty"`
 	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -275,9 +275,9 @@ func (m *SetMessageRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_SetMessageRequest proto.InternalMessageInfo
 
-func (m *SetMessageRequest) GetCluster() string {
+func (m *SetMessageRequest) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -328,7 +328,7 @@ func (m *SetMessageReply) XXX_DiscardUnknown() {
 var xxx_messageInfo_SetMessageReply proto.InternalMessageInfo
 
 type GetMessageRequest struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,2,opt,name=channel,proto3" json:"channel,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -360,9 +360,9 @@ func (m *GetMessageRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetMessageRequest proto.InternalMessageInfo
 
-func (m *GetMessageRequest) GetCluster() string {
+func (m *GetMessageRequest) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -414,7 +414,7 @@ func (m *GetMessageReply) GetName() string {
 }
 
 type GetChannelDataRequest struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,2,opt,name=channel,proto3" json:"channel,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -446,9 +446,9 @@ func (m *GetChannelDataRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetChannelDataRequest proto.InternalMessageInfo
 
-func (m *GetChannelDataRequest) GetCluster() string {
+func (m *GetChannelDataRequest) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -461,7 +461,7 @@ func (m *GetChannelDataRequest) GetChannel() string {
 }
 
 type GetChannelDataReply struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,3,opt,name=channel,proto3" json:"channel,omitempty"`
 	Message              string   `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`
 	Files                []*File  `protobuf:"bytes,5,rep,name=files,proto3" json:"files,omitempty"`
@@ -495,9 +495,9 @@ func (m *GetChannelDataReply) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetChannelDataReply proto.InternalMessageInfo
 
-func (m *GetChannelDataReply) GetCluster() string {
+func (m *GetChannelDataReply) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -524,7 +524,7 @@ func (m *GetChannelDataReply) GetFiles() []*File {
 }
 
 type SetChannelDataRequest struct {
-	Cluster              string   `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	ClusterID            string   `protobuf:"bytes,1,opt,name=clusterID,proto3" json:"clusterID,omitempty"`
 	Channel              string   `protobuf:"bytes,3,opt,name=channel,proto3" json:"channel,omitempty"`
 	Message              string   `protobuf:"bytes,4,opt,name=message,proto3" json:"message,omitempty"`
 	Files                []*File  `protobuf:"bytes,5,rep,name=files,proto3" json:"files,omitempty"`
@@ -558,9 +558,9 @@ func (m *SetChannelDataRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_SetChannelDataRequest proto.InternalMessageInfo
 
-func (m *SetChannelDataRequest) GetCluster() string {
+func (m *SetChannelDataRequest) GetClusterID() string {
 	if m != nil {
-		return m.Cluster
+		return m.ClusterID
 	}
 	return ""
 }
@@ -617,6 +617,295 @@ func (m *SetChannelDataReply) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_SetChannelDataReply proto.InternalMessageInfo
 
+type Cluster struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description          string   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Servers              []string `protobuf:"bytes,4,rep,name=servers,proto3" json:"servers,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Cluster) Reset()         { *m = Cluster{} }
+func (m *Cluster) String() string { return proto.CompactTextString(m) }
+func (*Cluster) ProtoMessage()    {}
+func (*Cluster) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{13}
+}
+
+func (m *Cluster) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Cluster.Unmarshal(m, b)
+}
+func (m *Cluster) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Cluster.Marshal(b, m, deterministic)
+}
+func (m *Cluster) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Cluster.Merge(m, src)
+}
+func (m *Cluster) XXX_Size() int {
+	return xxx_messageInfo_Cluster.Size(m)
+}
+func (m *Cluster) XXX_DiscardUnknown() {
+	xxx_messageInfo_Cluster.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Cluster proto.InternalMessageInfo
+
+func (m *Cluster) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Cluster) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *Cluster) GetDescription() string {
+	if m != nil {
+		return m.Description
+	}
+	return ""
+}
+
+func (m *Cluster) GetServers() []string {
+	if m != nil {
+		return m.Servers
+	}
+	return nil
+}
+
+type SaveClusterRequest struct {
+	Cluster              *Cluster `protobuf:"bytes,2,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SaveClusterRequest) Reset()         { *m = SaveClusterRequest{} }
+func (m *SaveClusterRequest) String() string { return proto.CompactTextString(m) }
+func (*SaveClusterRequest) ProtoMessage()    {}
+func (*SaveClusterRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{14}
+}
+
+func (m *SaveClusterRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SaveClusterRequest.Unmarshal(m, b)
+}
+func (m *SaveClusterRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SaveClusterRequest.Marshal(b, m, deterministic)
+}
+func (m *SaveClusterRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SaveClusterRequest.Merge(m, src)
+}
+func (m *SaveClusterRequest) XXX_Size() int {
+	return xxx_messageInfo_SaveClusterRequest.Size(m)
+}
+func (m *SaveClusterRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_SaveClusterRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SaveClusterRequest proto.InternalMessageInfo
+
+func (m *SaveClusterRequest) GetCluster() *Cluster {
+	if m != nil {
+		return m.Cluster
+	}
+	return nil
+}
+
+type SaveClusterReply struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SaveClusterReply) Reset()         { *m = SaveClusterReply{} }
+func (m *SaveClusterReply) String() string { return proto.CompactTextString(m) }
+func (*SaveClusterReply) ProtoMessage()    {}
+func (*SaveClusterReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{15}
+}
+
+func (m *SaveClusterReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SaveClusterReply.Unmarshal(m, b)
+}
+func (m *SaveClusterReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SaveClusterReply.Marshal(b, m, deterministic)
+}
+func (m *SaveClusterReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SaveClusterReply.Merge(m, src)
+}
+func (m *SaveClusterReply) XXX_Size() int {
+	return xxx_messageInfo_SaveClusterReply.Size(m)
+}
+func (m *SaveClusterReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_SaveClusterReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SaveClusterReply proto.InternalMessageInfo
+
+func (m *SaveClusterReply) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type GetClusterRequest struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetClusterRequest) Reset()         { *m = GetClusterRequest{} }
+func (m *GetClusterRequest) String() string { return proto.CompactTextString(m) }
+func (*GetClusterRequest) ProtoMessage()    {}
+func (*GetClusterRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{16}
+}
+
+func (m *GetClusterRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetClusterRequest.Unmarshal(m, b)
+}
+func (m *GetClusterRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetClusterRequest.Marshal(b, m, deterministic)
+}
+func (m *GetClusterRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetClusterRequest.Merge(m, src)
+}
+func (m *GetClusterRequest) XXX_Size() int {
+	return xxx_messageInfo_GetClusterRequest.Size(m)
+}
+func (m *GetClusterRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetClusterRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetClusterRequest proto.InternalMessageInfo
+
+func (m *GetClusterRequest) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type GetClusterReply struct {
+	Cluster              *Cluster `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetClusterReply) Reset()         { *m = GetClusterReply{} }
+func (m *GetClusterReply) String() string { return proto.CompactTextString(m) }
+func (*GetClusterReply) ProtoMessage()    {}
+func (*GetClusterReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{17}
+}
+
+func (m *GetClusterReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetClusterReply.Unmarshal(m, b)
+}
+func (m *GetClusterReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetClusterReply.Marshal(b, m, deterministic)
+}
+func (m *GetClusterReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetClusterReply.Merge(m, src)
+}
+func (m *GetClusterReply) XXX_Size() int {
+	return xxx_messageInfo_GetClusterReply.Size(m)
+}
+func (m *GetClusterReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetClusterReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetClusterReply proto.InternalMessageInfo
+
+func (m *GetClusterReply) GetCluster() *Cluster {
+	if m != nil {
+		return m.Cluster
+	}
+	return nil
+}
+
+type GetClustersRequest struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetClustersRequest) Reset()         { *m = GetClustersRequest{} }
+func (m *GetClustersRequest) String() string { return proto.CompactTextString(m) }
+func (*GetClustersRequest) ProtoMessage()    {}
+func (*GetClustersRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{18}
+}
+
+func (m *GetClustersRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetClustersRequest.Unmarshal(m, b)
+}
+func (m *GetClustersRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetClustersRequest.Marshal(b, m, deterministic)
+}
+func (m *GetClustersRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetClustersRequest.Merge(m, src)
+}
+func (m *GetClustersRequest) XXX_Size() int {
+	return xxx_messageInfo_GetClustersRequest.Size(m)
+}
+func (m *GetClustersRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetClustersRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetClustersRequest proto.InternalMessageInfo
+
+type GetClustersReply struct {
+	Clusters             []*Cluster `protobuf:"bytes,1,rep,name=clusters,proto3" json:"clusters,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *GetClustersReply) Reset()         { *m = GetClustersReply{} }
+func (m *GetClustersReply) String() string { return proto.CompactTextString(m) }
+func (*GetClustersReply) ProtoMessage()    {}
+func (*GetClustersReply) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7ed94b0a22d11796, []int{19}
+}
+
+func (m *GetClustersReply) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetClustersReply.Unmarshal(m, b)
+}
+func (m *GetClustersReply) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetClustersReply.Marshal(b, m, deterministic)
+}
+func (m *GetClustersReply) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetClustersReply.Merge(m, src)
+}
+func (m *GetClustersReply) XXX_Size() int {
+	return xxx_messageInfo_GetClustersReply.Size(m)
+}
+func (m *GetClustersReply) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetClustersReply.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetClustersReply proto.InternalMessageInfo
+
+func (m *GetClustersReply) GetClusters() []*Cluster {
+	if m != nil {
+		return m.Clusters
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*File)(nil), "registrygrpc.File")
 	proto.RegisterType((*SaveFilesRequest)(nil), "registrygrpc.SaveFilesRequest")
@@ -631,38 +920,56 @@ func init() {
 	proto.RegisterType((*GetChannelDataReply)(nil), "registrygrpc.GetChannelDataReply")
 	proto.RegisterType((*SetChannelDataRequest)(nil), "registrygrpc.SetChannelDataRequest")
 	proto.RegisterType((*SetChannelDataReply)(nil), "registrygrpc.SetChannelDataReply")
+	proto.RegisterType((*Cluster)(nil), "registrygrpc.Cluster")
+	proto.RegisterType((*SaveClusterRequest)(nil), "registrygrpc.SaveClusterRequest")
+	proto.RegisterType((*SaveClusterReply)(nil), "registrygrpc.SaveClusterReply")
+	proto.RegisterType((*GetClusterRequest)(nil), "registrygrpc.GetClusterRequest")
+	proto.RegisterType((*GetClusterReply)(nil), "registrygrpc.GetClusterReply")
+	proto.RegisterType((*GetClustersRequest)(nil), "registrygrpc.GetClustersRequest")
+	proto.RegisterType((*GetClustersReply)(nil), "registrygrpc.GetClustersReply")
 }
 
 func init() { proto.RegisterFile("main.proto", fileDescriptor_7ed94b0a22d11796) }
 
 var fileDescriptor_7ed94b0a22d11796 = []byte{
-	// 409 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x94, 0x4d, 0x4f, 0xf2, 0x40,
-	0x10, 0xc7, 0x9f, 0x3e, 0x85, 0x87, 0x87, 0x91, 0xd7, 0x25, 0x24, 0x4d, 0x15, 0xc5, 0x1a, 0x93,
-	0x9e, 0x7a, 0xc0, 0x93, 0x67, 0x5f, 0xd6, 0x84, 0x68, 0x4c, 0xf7, 0xa6, 0xa7, 0x15, 0x57, 0x24,
-	0x29, 0xa5, 0xb6, 0x8b, 0x09, 0x1f, 0xc2, 0xf8, 0x8d, 0x8d, 0xd9, 0x96, 0xbe, 0x5b, 0x20, 0xa2,
-	0xb7, 0x9d, 0xce, 0xcc, 0x6f, 0xfe, 0x3b, 0x3b, 0x53, 0x80, 0x29, 0x9d, 0xd8, 0x86, 0xe3, 0xce,
-	0xf8, 0x0c, 0xd5, 0x5c, 0x36, 0x9e, 0x78, 0xdc, 0x5d, 0x8c, 0x5d, 0x67, 0xa4, 0x19, 0x50, 0xba,
-	0x9c, 0x58, 0x0c, 0x21, 0x28, 0xd9, 0x74, 0xca, 0x94, 0xbf, 0x7d, 0x49, 0xaf, 0x9a, 0xfe, 0x59,
-	0x7c, 0x7b, 0xa4, 0x9c, 0x2a, 0x72, 0x5f, 0xd2, 0x6b, 0xa6, 0x7f, 0xd6, 0x1c, 0x68, 0x11, 0xfa,
-	0xca, 0x44, 0x8e, 0x67, 0xb2, 0x97, 0x39, 0xf3, 0x38, 0x52, 0xa0, 0x32, 0xb2, 0xe6, 0x1e, 0x67,
-	0xae, 0x22, 0xf9, 0xe9, 0xa1, 0xe9, 0x7b, 0x9e, 0xa9, 0x6d, 0x33, 0x6b, 0x09, 0x0e, 0x4d, 0xa4,
-	0x43, 0xf9, 0x49, 0x30, 0x14, 0xb9, 0x2f, 0xeb, 0x3b, 0x03, 0x64, 0x24, 0x55, 0x19, 0x02, 0x6f,
-	0x06, 0x01, 0x5a, 0x0b, 0x1a, 0x89, 0x8a, 0x8e, 0xb5, 0xd0, 0x2e, 0xa0, 0x89, 0x19, 0xdf, 0x56,
-	0x82, 0x76, 0x0a, 0xf5, 0x18, 0xe3, 0x58, 0x8b, 0x58, 0x93, 0xb4, 0x4e, 0xd3, 0x3d, 0xb4, 0x09,
-	0xe3, 0xd7, 0xcc, 0xf3, 0xe8, 0x98, 0x6d, 0xd3, 0x86, 0xb0, 0xed, 0x72, 0xdc, 0x76, 0xad, 0x0d,
-	0xcd, 0x24, 0x5c, 0xdc, 0x18, 0x43, 0x1b, 0xff, 0x44, 0x3d, 0xed, 0xd8, 0x6f, 0x5d, 0x92, 0x1d,
-	0x49, 0x90, 0x12, 0x12, 0x86, 0xd0, 0xc5, 0x8c, 0x9f, 0x05, 0x49, 0xe7, 0x94, 0xd3, 0x6d, 0x6a,
-	0xbe, 0x49, 0xd0, 0xc9, 0xd2, 0x44, 0xe1, 0x8d, 0x58, 0x72, 0xba, 0x5f, 0x0a, 0x54, 0xa6, 0x81,
-	0x78, 0xa5, 0x14, 0x78, 0x96, 0x66, 0xfc, 0x78, 0xe5, 0x75, 0x8f, 0xf7, 0x2e, 0x41, 0x97, 0x7c,
-	0xff, 0x76, 0xbf, 0xa0, 0xa8, 0x0b, 0x1d, 0x92, 0x6f, 0xd0, 0xe0, 0x43, 0x86, 0xfa, 0xad, 0xd8,
-	0x59, 0x73, 0x99, 0x88, 0x86, 0x50, 0x8d, 0x76, 0x01, 0xed, 0xa7, 0x81, 0xd9, 0xb5, 0x54, 0xf7,
-	0x0a, 0xfd, 0x62, 0xa4, 0xfe, 0xa0, 0x2b, 0xf8, 0x1f, 0xce, 0x3f, 0xea, 0xa5, 0x63, 0x33, 0xeb,
-	0xa5, 0xee, 0x16, 0xb9, 0x03, 0xd2, 0x0d, 0x40, 0x3c, 0xb1, 0xe8, 0x20, 0x53, 0x37, 0x3b, 0xb8,
-	0x6a, 0xaf, 0x38, 0x20, 0xe2, 0xe1, 0x42, 0x1e, 0x5e, 0xc7, 0xc3, 0x39, 0xde, 0x1d, 0x34, 0xd2,
-	0x03, 0x88, 0x8e, 0x72, 0x29, 0xf9, 0x71, 0x50, 0x0f, 0x57, 0x07, 0x45, 0x6c, 0xb2, 0x92, 0x4d,
-	0x36, 0x61, 0x93, 0xaf, 0xd8, 0x0f, 0xff, 0xfc, 0x3f, 0xf6, 0xc9, 0x67, 0x00, 0x00, 0x00, 0xff,
-	0xff, 0x43, 0x21, 0x82, 0x1a, 0xbf, 0x05, 0x00, 0x00,
+	// 584 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x96, 0x5f, 0x6f, 0xda, 0x3c,
+	0x14, 0xc6, 0x1b, 0x02, 0x2f, 0xe5, 0xd0, 0x52, 0x70, 0x5f, 0xa4, 0x28, 0x2b, 0x5d, 0xe6, 0x6a,
+	0x12, 0x57, 0x4c, 0x63, 0x57, 0xbb, 0x5d, 0xdb, 0x65, 0x55, 0xb5, 0x7f, 0xc9, 0xdd, 0x6e, 0xa6,
+	0x0c, 0x3c, 0x16, 0x29, 0x84, 0x2c, 0x71, 0x2b, 0xf1, 0x31, 0xa6, 0x7d, 0xd5, 0x7d, 0x80, 0xc9,
+	0x89, 0x9d, 0x38, 0x4e, 0x03, 0x48, 0x74, 0x77, 0xb1, 0x7d, 0xfc, 0x3b, 0x8f, 0xcf, 0xb1, 0x1f,
+	0x05, 0x60, 0xe9, 0xf9, 0xe1, 0x24, 0x8a, 0x57, 0x74, 0x85, 0x8e, 0x62, 0xb2, 0xf0, 0x13, 0x1a,
+	0xaf, 0x17, 0x71, 0x34, 0xc3, 0x13, 0x68, 0xbe, 0xf5, 0x03, 0x82, 0x10, 0x34, 0x43, 0x6f, 0x49,
+	0x8c, 0x86, 0xa5, 0x8d, 0x3b, 0x4e, 0xfa, 0xcd, 0xe6, 0xe6, 0x1e, 0xf5, 0x0c, 0xdd, 0xd2, 0xc6,
+	0x47, 0x4e, 0xfa, 0x8d, 0x29, 0xf4, 0x5d, 0xef, 0x9e, 0xb0, 0x3d, 0x89, 0x43, 0x7e, 0xde, 0x91,
+	0x84, 0xa2, 0x33, 0xe8, 0xcc, 0x82, 0xbb, 0x84, 0x92, 0xf8, 0xe6, 0xca, 0xd0, 0x52, 0x40, 0x31,
+	0x81, 0x0c, 0x68, 0xcf, 0x7e, 0x78, 0x61, 0x48, 0x02, 0x0e, 0x17, 0x43, 0x34, 0x86, 0xd6, 0x77,
+	0xc6, 0x31, 0x74, 0x4b, 0x1f, 0x77, 0xa7, 0x68, 0x22, 0x2b, 0x9b, 0xb0, 0x14, 0x4e, 0x16, 0x80,
+	0xfb, 0xd0, 0x93, 0xb2, 0x46, 0xc1, 0x1a, 0xdf, 0xc0, 0x89, 0x4d, 0xe8, 0x63, 0xc8, 0xc0, 0xaf,
+	0xe1, 0xb8, 0x40, 0x45, 0xc1, 0xba, 0xd0, 0xa5, 0x6d, 0xd3, 0xf5, 0x15, 0x06, 0x2e, 0xa1, 0xef,
+	0x49, 0x92, 0x78, 0x0b, 0xb2, 0x6f, 0x39, 0x44, 0x0b, 0xf4, 0xa2, 0x05, 0x78, 0x00, 0x27, 0x72,
+	0x02, 0x76, 0xf2, 0x5b, 0x18, 0xd8, 0x8f, 0x95, 0x13, 0x3f, 0x4f, 0xcb, 0x28, 0xf3, 0x73, 0x19,
+	0x9a, 0x24, 0xe3, 0x23, 0x0c, 0x6d, 0x42, 0x2f, 0xb3, 0x4d, 0x57, 0x1e, 0xf5, 0xf6, 0xcd, 0xfb,
+	0x4b, 0x83, 0x53, 0x95, 0xc8, 0x92, 0xef, 0xcc, 0xd3, 0xcb, 0xb5, 0x33, 0xa0, 0xbd, 0xcc, 0x0e,
+	0x61, 0x34, 0xb3, 0x15, 0x3e, 0x2c, 0x9a, 0xd9, 0xda, 0xd6, 0xcc, 0xdf, 0x1a, 0x0c, 0xdd, 0xfd,
+	0x4e, 0xf9, 0x0f, 0x54, 0x0d, 0xe1, 0xd4, 0xad, 0x16, 0x0a, 0xfb, 0xd0, 0xbe, 0xcc, 0x14, 0xa0,
+	0x1e, 0x34, 0xfc, 0x39, 0x97, 0xd5, 0xf0, 0xe7, 0x0f, 0x3e, 0x65, 0x0b, 0xba, 0x73, 0x92, 0xcc,
+	0x62, 0x3f, 0xa2, 0xfe, 0x2a, 0xe4, 0x3a, 0xe5, 0x29, 0xa6, 0x35, 0x21, 0xf1, 0x3d, 0x89, 0x13,
+	0xa3, 0x69, 0xe9, 0x4c, 0x2b, 0x1f, 0xe2, 0x6b, 0x40, 0xec, 0xf1, 0xf1, 0x74, 0xa2, 0x26, 0x2f,
+	0xa0, 0xcd, 0x4b, 0x90, 0x26, 0xea, 0x4e, 0x87, 0xe5, 0x33, 0x88, 0x70, 0x11, 0x85, 0x71, 0xe6,
+	0x1c, 0x39, 0x86, 0xb5, 0x5b, 0x91, 0x8e, 0x2f, 0xd2, 0xbb, 0xad, 0x64, 0x52, 0x83, 0xde, 0xa4,
+	0x77, 0xb6, 0xc4, 0x91, 0xc4, 0x68, 0x3b, 0x89, 0xf9, 0x1f, 0x50, 0xc1, 0x10, 0x0e, 0x82, 0xaf,
+	0xa1, 0x5f, 0x9a, 0x65, 0xe8, 0x97, 0x70, 0xc8, 0x37, 0x09, 0x3f, 0xa8, 0x61, 0xe7, 0x61, 0xd3,
+	0x3f, 0x2d, 0x38, 0xfe, 0xc4, 0xbc, 0xd6, 0xe1, 0x71, 0xe8, 0x16, 0x3a, 0xb9, 0x7f, 0xa1, 0xf3,
+	0xf2, 0x7e, 0xd5, 0x4e, 0xcd, 0xb3, 0xda, 0x75, 0xd6, 0xf8, 0x03, 0xf4, 0x0e, 0x0e, 0x85, 0x5f,
+	0xa1, 0x51, 0x39, 0x56, 0xb1, 0x44, 0xf3, 0x49, 0xdd, 0x72, 0x46, 0xfa, 0x00, 0x50, 0xb8, 0x0b,
+	0x7a, 0xaa, 0xe4, 0x55, 0x4d, 0xc6, 0x1c, 0xd5, 0x07, 0xe4, 0x3c, 0xbb, 0x96, 0x67, 0x6f, 0xe3,
+	0xd9, 0x15, 0xde, 0x17, 0xe8, 0x95, 0x4d, 0x02, 0x5d, 0x54, 0xb6, 0x54, 0x9f, 0xab, 0xf9, 0x6c,
+	0x73, 0x50, 0xce, 0x76, 0x37, 0xb2, 0xdd, 0x5d, 0xd8, 0xee, 0x83, 0xec, 0xcf, 0xd0, 0x95, 0xae,
+	0x3a, 0xb2, 0xaa, 0x0d, 0x2d, 0x5f, 0x71, 0xf3, 0x7c, 0x43, 0x84, 0x5c, 0x5a, 0x41, 0xac, 0x96,
+	0x56, 0x01, 0x8e, 0xea, 0x03, 0x72, 0x89, 0xd2, 0x55, 0x57, 0x25, 0x56, 0xdf, 0x86, 0x2a, 0x51,
+	0x7d, 0x27, 0xf8, 0xe0, 0xdb, 0x7f, 0xe9, 0xff, 0xc5, 0xab, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff,
+	0x81, 0xbc, 0xe7, 0x14, 0x6d, 0x08, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -683,6 +990,9 @@ type ProtoRegistryClient interface {
 	GetMessage(ctx context.Context, in *GetMessageRequest, opts ...grpc.CallOption) (*GetMessageReply, error)
 	GetChannelData(ctx context.Context, in *GetChannelDataRequest, opts ...grpc.CallOption) (*GetChannelDataReply, error)
 	SetChannelData(ctx context.Context, in *SetChannelDataRequest, opts ...grpc.CallOption) (*SetChannelDataReply, error)
+	SaveCluster(ctx context.Context, in *SaveClusterRequest, opts ...grpc.CallOption) (*SaveClusterReply, error)
+	GetCluster(ctx context.Context, in *GetClusterRequest, opts ...grpc.CallOption) (*GetClusterReply, error)
+	GetClusters(ctx context.Context, in *GetClustersRequest, opts ...grpc.CallOption) (*GetClustersReply, error)
 }
 
 type protoRegistryClient struct {
@@ -747,6 +1057,33 @@ func (c *protoRegistryClient) SetChannelData(ctx context.Context, in *SetChannel
 	return out, nil
 }
 
+func (c *protoRegistryClient) SaveCluster(ctx context.Context, in *SaveClusterRequest, opts ...grpc.CallOption) (*SaveClusterReply, error) {
+	out := new(SaveClusterReply)
+	err := c.cc.Invoke(ctx, "/registrygrpc.ProtoRegistry/SaveCluster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *protoRegistryClient) GetCluster(ctx context.Context, in *GetClusterRequest, opts ...grpc.CallOption) (*GetClusterReply, error) {
+	out := new(GetClusterReply)
+	err := c.cc.Invoke(ctx, "/registrygrpc.ProtoRegistry/GetCluster", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *protoRegistryClient) GetClusters(ctx context.Context, in *GetClustersRequest, opts ...grpc.CallOption) (*GetClustersReply, error) {
+	out := new(GetClustersReply)
+	err := c.cc.Invoke(ctx, "/registrygrpc.ProtoRegistry/GetClusters", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProtoRegistryServer is the server API for ProtoRegistry service.
 type ProtoRegistryServer interface {
 	SaveFiles(context.Context, *SaveFilesRequest) (*SaveFilesReply, error)
@@ -755,6 +1092,9 @@ type ProtoRegistryServer interface {
 	GetMessage(context.Context, *GetMessageRequest) (*GetMessageReply, error)
 	GetChannelData(context.Context, *GetChannelDataRequest) (*GetChannelDataReply, error)
 	SetChannelData(context.Context, *SetChannelDataRequest) (*SetChannelDataReply, error)
+	SaveCluster(context.Context, *SaveClusterRequest) (*SaveClusterReply, error)
+	GetCluster(context.Context, *GetClusterRequest) (*GetClusterReply, error)
+	GetClusters(context.Context, *GetClustersRequest) (*GetClustersReply, error)
 }
 
 func RegisterProtoRegistryServer(s *grpc.Server, srv ProtoRegistryServer) {
@@ -869,6 +1209,60 @@ func _ProtoRegistry_SetChannelData_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProtoRegistry_SaveCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SaveClusterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProtoRegistryServer).SaveCluster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registrygrpc.ProtoRegistry/SaveCluster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProtoRegistryServer).SaveCluster(ctx, req.(*SaveClusterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProtoRegistry_GetCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetClusterRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProtoRegistryServer).GetCluster(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registrygrpc.ProtoRegistry/GetCluster",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProtoRegistryServer).GetCluster(ctx, req.(*GetClusterRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProtoRegistry_GetClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetClustersRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProtoRegistryServer).GetClusters(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/registrygrpc.ProtoRegistry/GetClusters",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProtoRegistryServer).GetClusters(ctx, req.(*GetClustersRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ProtoRegistry_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "registrygrpc.ProtoRegistry",
 	HandlerType: (*ProtoRegistryServer)(nil),
@@ -896,6 +1290,18 @@ var _ProtoRegistry_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SetChannelData",
 			Handler:    _ProtoRegistry_SetChannelData_Handler,
+		},
+		{
+			MethodName: "SaveCluster",
+			Handler:    _ProtoRegistry_SaveCluster_Handler,
+		},
+		{
+			MethodName: "GetCluster",
+			Handler:    _ProtoRegistry_GetCluster_Handler,
+		},
+		{
+			MethodName: "GetClusters",
+			Handler:    _ProtoRegistry_GetClusters_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
